@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yousef Mohamed | Full Stack Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="loading-screen" class="load-screen">
+        <div class="load-content">
+            <div class="load-icons">
+                <i class="fas fa-code load-glow"></i>
+                <i class="fas fa-layer-group load-glow"></i>
+                <i class="fas fa-bolt load-glow"></i>
+            </div>
+            <h1 class="load-text load-glow">WELCOME TO MY PORTFOLIO</h1>
+            <div class="load-bar-container">
+                <div class="load-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-toggle" id="mobile-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="logo">
+            <h2><span><i class="fas fa-code"></i></span> DevYousef</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#about"><i class="fas fa-user"></i> About Me</a></li>
+            <li><a href="#services"><i class="fas fa-concierge-bell"></i> Services</a></li>
+            <li><a href="#skills"><i class="fas fa-laptop-code"></i> Skills</a></li>
+            <li><a href="#portfolio"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/yousef-mohamed-172a90279/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/yousef.mohmed.17/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/yousef.mohmed.17/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/201557893990" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.tiktok.com/@yousef.mohmed.17" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <section id="home" class="hero fade-in">
+            <div class="hero-left">
+                <div class="availability">
+                    <span class="dot"></span> Available for projects
+                </div>
+                <h1>Hi, I'm <span class="highlight">Yousef Mohamed</span></h1>
+                <h3 class="subtitle">I am a <span id="typed-text"></span></h3>
+                <p>Crafting immersive web experiences. Explore my journey through custom projects, technical expertise, and continuous learning path.</p>
+                <div class="hero-btns">
+                    <a href="#portfolio" class="btn primary-btn">View Projects</a>
+                    <a href="#contact" class="btn secondary-btn">Let's Talk <i class="fas fa-comments"></i></a>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="code-block-wrapper glow-blue">
+                    <div class="code-header">
+                        <div class="code-dots">
+                            <span class="dot-red"></span>
+                            <span class="dot-yellow"></span>
+                            <span class="dot-green"></span>
+                        </div>
+                        <span class="code-title">portfolio.js</span>
+                    </div>
+                    <div class="code-content">
+                        <pre><code>
+<span class="var">const</span> Developer = {
+    name: <span class="string">"Yousef Mohamed"</span>,
+    role: <span class="string">"Full-Stack Web Developer"</span>,
+    education: <span class="string">"3rd Year CS Student"</span>,
+    skills: [
+        <span class="string">"JavaScript"</span>, <span class="string">"React.js"</span>, <span class="string">"PHP"</span>, 
+        <span class="string">"Laravel"</span>, <span class="string">"MySQL"</span>, <span class="string">"Tailwind"</span>
+    ],
+    status: <span class="string">"Building the future..."</span>
+};
+                        </code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section fade-in">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-container neon-glow-border">
+                <div class="about-text-column">
+                    <h3>Yousef Mohamed</h3>
+                    <p>I am a 3rd-year <strong>Computer Science</strong> student, specializing in <strong>Full Stack Development</strong>. My journey is driven by a deep curiosity for building efficient, user-centric, and scalable web solutions.</p>
+                    <p>My expertise spans the entire development lifecycle, from architecting robust database systems and secure APIs to crafting intuitive and modern frontend interfaces.</p>
+                </div>
+                <div class="about-img-column">
+                    <img src="./img/me.jpg" alt="Yousef Mohamed">
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services-section fade-in">
+            <h2 class="section-title">My Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Front-End Development</h3>
+                    <p>Building modern, responsive, and interactive UIs using HTML, CSS, React.js, and Tailwind.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-server"></i>
+                    <h3>Back-End & APIs</h3>
+                    <p>Designing secure backend architectures and RESTful APIs using PHP, Laravel, and MySQL.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fab fa-wordpress"></i>
+                    <h3>WordPress Solutions</h3>
+                    <p>Creating and customizing professional WordPress sites for businesses and agencies.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills-section fade-in">
+            <h2 class="section-title">Skills Stack</h2>
+            <div class="skills-pills">
+                <div class="skill-pill"><i class="fab fa-html5 html-icon"></i> HTML</div>
+                <div class="skill-pill"><i class="fab fa-css3-alt css-icon"></i> CSS / Tailwind</div>
+                <div class="skill-pill"><i class="fab fa-js js-icon"></i> JavaScript</div>
+                <div class="skill-pill"><i class="fab fa-react react-icon"></i> React.js</div>
+                <div class="skill-pill"><i class="fab fa-php php-icon"></i> PHP</div>
+                <div class="skill-pill"><i class="fab fa-laravel laravel-icon"></i> Laravel</div>
+                <div class="skill-pill"><i class="fab fa-wordpress wp-icon"></i> WordPress</div>
+                <div class="skill-pill"><i class="fas fa-database db-icon"></i> MySQL</div>
+                <div class="skill-pill"><i class="fab fa-git-alt git-icon"></i> Git & GitHub</div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio-section fade-in">
+            <h2 class="section-title">Portfolio Showcase</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="./img/screencapture-shgroup-eg-2026-04-18-04_38_47.png" alt="SH Group">
+                        <span class="badge">Deployed</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>SH Group - Agency</h3>
+                        <p>Marketing agency website built with WordPress and custom programming.</p>
+                        <a href="https://shgroup-eg.com/" target="_blank" rel="noopener noreferrer" class="project-link">Live Link <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="./img/screencapture-yousefmohamed17-github-io-barcalona-2026-04-18-04_38_20.png" alt="Barca Land">
+                        <span class="badge">Frontend</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Barca Landing Page</h3>
+                        <p>Interactive landing page using HTML, CSS, and JS.</p>
+                        <a href="https://yousefmohamed17.github.io/barcalona/" target="_blank" rel="noopener noreferrer" class="project-link">Live Link <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="./img/screencapture-shgroup-eg-qt-2026-04-18-04_39_13.png" alt="Masjid Board">
+                        <span class="badge">Full Stack</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Masjid Board</h3>
+                        <p>Dashboard showing prayer times, Quran reader, and audio player.</p>
+                        <a href="https://shgroup-eg.com/qt/" target="_blank" rel="noopener noreferrer" class="project-link">Live Link <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="./img/screencapture-yousefmohamed17-github-io-portfolio-2026-04-18-04_40_10.png" alt="V1 Portfolio">
+                        <span class="badge">Archive</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Old Portfolio (v1)</h3>
+                        <p>My previous personal portfolio project.</p>
+                        <a href="https://yousefmohamed17.github.io/portfolio/" target="_blank" rel="noopener noreferrer" class="project-link">Live Link <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section fade-in">
+            <h2 class="section-title">Let's Work Together</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="info-item"><i class="fas fa-envelope"></i><div><h4>Email</h4><p><a href="mailto:ym828816@gmail.com">ym828816@gmail.com</a></p></div></div>
+                    <div class="info-item"><i class="fab fa-whatsapp"></i><div><h4>WhatsApp</h4><p><a href="https://wa.me/201557893990" target="_blank" rel="noopener noreferrer">01557893990</a></p></div></div>
+                    <div class="info-item"><i class="fas fa-map-marker-alt"></i><div><h4>Location</h4><p>Egypt</p></div></div>
+                </div>
+                <form class="contact-form" onsubmit="sendToWhatsApp(event)">
+                    <input type="text" id="sender-name" placeholder="Your Name" required>
+                    <input type="email" id="sender-email" placeholder="Email Address" required>
+                    <textarea id="sender-message" placeholder="Tell me about your project..." rows="5" required></textarea>
+                    <button type="submit" class="btn primary-btn submit-btn">Send via WhatsApp <i class="fab fa-whatsapp" style="font-size: 1.2rem; margin-left: 5px;"></i></button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
