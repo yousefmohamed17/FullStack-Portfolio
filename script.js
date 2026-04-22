@@ -2,31 +2,71 @@
 window.addEventListener('load', () => {
     const loadingScreen = document.getElementById('loading-screen');
     if (loadingScreen) {
-        setTimeout(() => { loadingScreen.classList.add('hide'); }, 2500); 
+        setTimeout(() => { loadingScreen.classList.add('hide'); }, 2000); 
     }
 });
 
-// 2. Mobile Sidebar Toggle
+// 2. EmailJS Integration
+emailjs.init("JX43wxcTpoAl8eX0a"); 
+
+const contactForm = document.getElementById('contact-form');
+if(contactForm) {
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const submitBtn = this.querySelector('.submit-btn');
+        const originalBtnText = submitBtn.innerHTML;
+        
+        submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+        submitBtn.disabled = true;
+
+        emailjs.sendForm('service_voffo5j', 'template_a3xb8x8', this)
+            .then(() => {
+                submitBtn.innerHTML = 'Sent Successfully! <i class="fas fa-check"></i>';
+                submitBtn.style.backgroundColor = '#25D366';
+                submitBtn.style.color = '#fff';
+                this.reset();
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.style.backgroundColor = '';
+                    submitBtn.style.color = '';
+                    submitBtn.disabled = false;
+                }, 4000);
+            }, (error) => {
+                submitBtn.innerHTML = 'Error! Try Again <i class="fas fa-times"></i>';
+                submitBtn.style.backgroundColor = '#ff5f56';
+                submitBtn.style.color = '#fff';
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.style.backgroundColor = '';
+                    submitBtn.style.color = '';
+                    submitBtn.disabled = false;
+                }, 4000);
+            });
+    });
+}
+
+// 3. Mobile Sidebar Toggle & Close on Click
 const mobileToggle = document.getElementById('mobile-toggle');
 const sidebar = document.getElementById('sidebar');
+const navLinks = document.querySelectorAll('.nav-links a');
 
 if (mobileToggle && sidebar) {
     mobileToggle.addEventListener('click', () => {
         sidebar.classList.toggle('active');
+        mobileToggle.classList.toggle('active'); // بنضيف دي عشان الأنيميشن يشتغل
     });
 }
 
-// 3. Close sidebar on link click (Mobile)
-const navLinks = document.querySelectorAll('.nav-links a');
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         if(window.innerWidth <= 768 && sidebar) {
             sidebar.classList.remove('active');
+            mobileToggle.classList.remove('active'); // بنضيف دي عشان يرجع 3 خطوط لما تدوس على أي لينك
         }
     });
 });
 
-// 4. Scroll Spy (Active Links) - Fixed Contact Issue
+// 4. Scroll Spy (Active Links highlighting)
 const sections = document.querySelectorAll('section');
 window.addEventListener('scroll', () => {
     let current = '';
@@ -38,7 +78,6 @@ window.addEventListener('scroll', () => {
         }
     });
 
-    // Fix: Highlight "contact" when scrolled to the very bottom
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
         current = 'contact';
     }
@@ -51,7 +90,18 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// 5. Scroll Reveal Animation (Fade In)
+// 5. Typing Animation (Fixed Layout Shift)
+if (document.getElementById('typed-text')) {
+    var typed = new Typed('#typed-text', {
+        strings: ["Full Stack Developer.", "Web Designer.", "Problem Solver."],
+        typeSpeed: 50, 
+        backSpeed: 30, 
+        backDelay: 1500, 
+        loop: true
+    });
+}
+
+// 6. Scroll Reveal Animation (Fade In)
 const fadeElements = document.querySelectorAll('.fade-in');
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -62,32 +112,3 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 }); 
 
 fadeElements.forEach(el => observer.observe(el));
-
-// 6. WhatsApp Message Form
-function sendToWhatsApp(event) {
-    event.preventDefault(); 
-    
-    const name = document.getElementById('sender-name').value;
-    const email = document.getElementById('sender-email').value;
-    const message = document.getElementById('sender-message').value;
-    
-    // WhatsApp Number
-    const phone = "201557893990"; 
-    
-    // Formatting the message
-    const text = `Hello Yousef, I found your portfolio and want to work with you.%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Message:* ${message}`;
-    
-    // Open WhatsApp in new tab
-    window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
-}
-
-// 7. Typing Animation
-if (document.getElementById('typed-text')) {
-    var typed = new Typed('#typed-text', {
-        strings: ["Full Stack Developer.", "Web Designer.", "Problem Solver."],
-        typeSpeed: 50, 
-        backSpeed: 30, 
-        backDelay: 1500, 
-        loop: true
-    });
-}
